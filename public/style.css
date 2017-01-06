@@ -1255,3 +1255,74 @@ button {
 
 body {
   background-color: mediumpurple; }
+
+header h1 {
+  text-align: center;
+  color: seagreen; }
+
+#nav {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto; }
+  #nav::before, #nav::after {
+    display: table;
+    content: ' '; }
+  #nav::after {
+    clear: both; }
+  #nav #show, #nav #add {
+    width: 41.66667%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    padding: 1%;
+    margin: 20px 50px;
+    background-color: seagreen;
+    border: 2px solid springgreen; }
+    @media print, screen and (min-width: 40em) {
+      #nav #show, #nav #add {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    #nav #show:last-child:not(:first-child), #nav #add:last-child:not(:first-child) {
+      float: right; }
+
+#search {
+  padding: 1%;
+  margin: 20px 50px;
+  background-color: seagreen;
+  border: 2px solid springgreen; }
+
+#menu {
+  list-style: none;
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto; }
+  #menu::before, #menu::after {
+    display: table;
+    content: ' '; }
+  #menu::after {
+    clear: both; }
+
+#menuItems {
+  text-align: center;
+  width: 100%;
+  float: left;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem; }
+  @media print, screen and (min-width: 40em) {
+    #menuItems {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+  #menuItems:last-child:not(:first-child) {
+    float: right; }
+
+h2 {
+  color: darkblue;
+  font-size: 2em; }
+
+.descrip {
+  color: blue;
+  font-size: 1em; }
+
+.price {
+  color: darkblue;
+  font-size: 1.5em; }

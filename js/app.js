@@ -1,17 +1,17 @@
 let food = [
-    {   name: 'Food A',
-        description: 'Words A',
-        price: 14.00,
-    },
-
-    {   name: 'Food B',
-        description: 'Words B',
+    {   name: 'Pizza',
+        description: 'monserella chesse, fresh pepperoi, tomato sause, and any meat of choice',
         price: 12.00,
     },
 
-    {  name: 'Food C',
-        description: 'Words C',
-        price: 23.00,
+    {   name: 'Filet Mignon',
+        description: 'Grass-fed filet with burgundy sauce',
+        price: 30.00,
+    },
+
+    {  name: 'Molten Chocolate Cake',
+        description: 'Decadent chocolate dessert with warm, gooey chocolate sauce',
+        price: 9.50,
     },
 ];
 
@@ -47,7 +47,7 @@ function showFood(list){
     
     
     let child = document.createElement('li');
-    let parent = document.querySelector('#menuItems ul');
+    let parent = document.querySelector('#menu');
     console.log(parent);
     
     let template = document.querySelector('#food-template');
@@ -56,7 +56,7 @@ function showFood(list){
     child.innerHTML = Mustache.render(template.innerHTML, {
         foodName: list.name,
         foodDescrip: list.description,
-        foodPrice: list.price,
+        foodPrice: list.price.toFixed(2),
     });
 
     parent.appendChild(child);

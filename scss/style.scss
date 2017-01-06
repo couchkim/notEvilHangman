@@ -10,3 +10,56 @@
 body{
     background-color: mediumpurple;
 }
+
+
+    header h1{
+        text-align: center;
+        color: seagreen;
+    }
+
+        #nav{
+            @include grid-row();
+        
+
+        #show, #add{
+            @include grid-column(5);
+            padding: 1%;
+            margin: 20px 50px;
+            background-color:seagreen;
+            border: 2px solid springgreen;
+
+        }    
+    }
+
+#search{
+            padding: 1%;
+            margin: 20px 50px;
+            background-color:seagreen;
+            border: 2px solid springgreen;
+}
+
+#menu{
+    list-style: none;
+    @include grid-row();
+    
+}
+    #menuItems{
+        text-align: center;
+        @include grid-column(12);
+
+    }
+
+    h2{
+        color:darkblue;
+        font-size: 2em;
+    }
+
+    .descrip{
+        color:blue;
+        font-size: 1em;
+    }
+
+    .price{
+        color:darkblue;
+        font-size: 1.5em;
+    }
