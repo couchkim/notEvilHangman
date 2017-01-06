@@ -9,6 +9,7 @@
     <script src='app.js'></script>
 
     <script type="x-mustache-template" id="food-template">    
+       
         <h2>{{ foodName }}</h2>
         <p class="descrip">{{ foodDescrip }}</p>
         <p class="price">${{ foodPrice }}</p>
@@ -45,11 +46,11 @@
 
             <div id="inputs">
                 <h3>Add a menu item below</h3>
-                <input type="text" class="add" placeholder="Food Name">
-                <input type="text" class="add" placeholder="Food Description">
-                <input type="text" class="add" placeholder="Food Price">
+                <input type="text" class="add" id = "newName" placeholder="Food Name">
+                <input type="text" class="add" id = "newDescrip" placeholder="Food Description">
+                <input type="text" class="add" id = "newPrice" placeholder="Food Price">
             </div>
-            <button>Add to Menu</button>
+            <button id="submit">Add to Menu</button>
 
         </section>
 

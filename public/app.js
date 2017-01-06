@@ -20,24 +20,18 @@ let food = [
 
 window.addEventListener('load', function (){
     food.map(showFood);
+    hideAdd();
+
+    let addButton = document.querySelector('#submit');
+    addButton.addEventListener('click', addFood);
+
+    let menuButton = document.querySelector('#show');
+    menuButton.addEventListener('click', showMenuView);
+
+    let itemButton = document.querySelector('#add');
+    itemButton.addEventListener('click', showItemView);
 
 });
-
-// let ajax = {
-//     get: function (url, show) {
-//         let request = new XMLHttpRequest;
-//          request.open('GET', url);
-//          request.addEventListener('load', function (){
-//         let response = JSON.parse(request.responseText);
-
-//         show(response);
-//     });
-//     request.send();
-//     },
-//     post: function () {
-
-//     },
-// };
 
 function showFood(list){
     let dataList = document.querySelector('#foodlist');
@@ -49,7 +43,6 @@ function showFood(list){
     
     let child = document.createElement('li');
     let parent = document.querySelector('#menu');
-    console.log(parent);
     
     let template = document.querySelector('#food-template');
 
@@ -57,11 +50,49 @@ function showFood(list){
     child.innerHTML = Mustache.render(template.innerHTML, {
         foodName: list.name,
         foodDescrip: list.description,
-        foodPrice: list.price.toFixed(2),
+        foodPrice: parseInt(list.price).toFixed(2),
     });
 
     parent.appendChild(child);
 
 };
+
+function addFood(){
+    let newItem= {
+        name: document.querySelector('#newName').value,
+        description: document.querySelector('#newDescrip').value,
+        price: document.querySelector('#newPrice').value,
+    }
+    
+    food.push(newItem);
+    console.log(newItem);
+    console.log(food);
+}
+
+function hideAdd(){
+    let addSection = document.querySelector('#addItem');
+    addSection.classList.add("hidden");
+
+}
+
+function showItemView(){
+    let removeMenu = document.querySelector('#menuItems');
+    removeMenu.classList.add("hidden");
+
+    let addBackItem = document.querySelector('#addItem');
+    addBackItem.classList.remove("hidden")
+
+}
+
+function showMenuView(){
+    let view = document.querySelector('#menu')
+    view.innerHTML = "";
+    
+    food.map(showFood);
+    let addBackMenu = document.querySelector('#menuItems');
+    addBackMenu.classList.remove("hidden");
+    hideAdd();
+
+}
 
 },{}]},{},[1]);
