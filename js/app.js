@@ -39,12 +39,19 @@ window.addEventListener('load', function (){
 // };
 
 function showFood(list){
+    let dataList = document.querySelector('#foodlist');
+    let listItems = document.createElement('option');
+    listItems.value = list.name;
+
+    dataList.appendChild(listItems);
+    
+    
     let child = document.createElement('li');
     let parent = document.querySelector('#menuItems ul');
     console.log(parent);
     
     let template = document.querySelector('#food-template');
-  
+
 
     child.innerHTML = Mustache.render(template.innerHTML, {
         foodName: list.name,

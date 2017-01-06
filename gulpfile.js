@@ -2,6 +2,7 @@
 
 let gulp = require('gulp');
 let sass = require('gulp-sass');
+let browser = require('gulp-browser');
 
 gulp.task('default', ['html', 'css', 'js']);
 
@@ -18,12 +19,13 @@ gulp.task('css', function(){
 });
 
 gulp.task('js', function(){
-    return gulp.src('app.js')
+    return gulp.src('js/app.js')
+    .pipe(browser.browserify())
     .pipe(gulp.dest('public/'));
 });
 
 gulp.task('watch', ['default'], function(){
     gulp.watch('*.html', ['html']);
     gulp.watch('scss/*.scss', ['css']);
-    gulp.watch('app.js', ['js']);
+    gulp.watch('js/*.js', ['js']);
 });
