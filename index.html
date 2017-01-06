@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Kim's Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script src='app.js'></script>
+
+    <script type="x-mustache-template" id="food-template">    
+        <h2>{{ foodName }}</h2>
+        <p class="descrip">{{ foodDescrip }}</p>
+        <p class="price">${{ foodPrice }}</p>
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Kim's Restaurant</h1>
+    </header>
+
+    <main>
+        <section id="menuItems">
+
+            <input type="text" id="search" placeholder="Search Menu">
+
+            <ul></ul>
+
+        </section>
+
+        <section id="addItem">
+
+            <div id="inputs">
+                <h3>Add a menu item below</h3>
+                <input type="text" class="add" placeholder="Food Name">
+                <input type="text" class="add" placeholder="Food Description">
+                <input type="text" class="add" placeholder="Food Price">
+            </div>
+            <button>Add to Menu</button>
+
+        </section>
+
+
+
+    </main>
+
+</body>
+
+
+</html>
