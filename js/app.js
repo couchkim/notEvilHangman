@@ -1,6 +1,6 @@
 let food = [
     {   name: 'Pizza',
-        description: 'monserella chesse, fresh pepperoi, tomato sause, and any meat of choice',
+        description: 'Mozerella Cheese, Fresh Pepperoni, Tomato Sauce, and any meat of choice',
         price: 12.00,
     },
 
@@ -33,11 +33,11 @@ window.addEventListener('load', function (){
 });
 
 function showFood(list){
-    let dataList = document.querySelector('#foodlist');
-    let listItems = document.createElement('option');
-    listItems.value = list.name;
+    // let dataList = document.querySelector('#foodlist');
+    // let listItems = document.createElement('option');
+    // listItems.value = list.name;
 
-    dataList.appendChild(listItems);
+    // dataList.appendChild(listItems);
     
     
     let child = document.createElement('li');
@@ -101,3 +101,25 @@ function showMenuView(){
     hideAdd();
 
 }
+
+function filterList(){
+    let input = document.querySelector('#search').value;
+    let newList = food
+
+    newList.filter(findNewResults);
+
+    function findNewResults(){
+        if (newList.name.includes(input)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    let display = document.querySelector('#menu');
+    display.innerHTML = "";
+    showFood(newList);
+
+}
+
+
+    
