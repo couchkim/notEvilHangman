@@ -113,7 +113,7 @@ function filterList(){
     }
     let display = document.querySelector('#menu');
     display.innerHTML = "";
-    showFood(newList);
+    newList.map(showFood);
 
 }
 
