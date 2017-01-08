@@ -67,6 +67,7 @@ function addFood(){
     food.push(newItem);
     console.log(newItem);
     console.log(food);
+    showMenuView();
 }
 
 function hideAdd(){
@@ -81,6 +82,13 @@ function showItemView(){
 
     let addBackItem = document.querySelector('#addItem');
     addBackItem.classList.remove("hidden")
+
+    let input1 = document.querySelector("#newName");
+    let input2 = document.querySelector("#newDescrip");
+    let input3 = document.querySelector("#newPrice");
+    input1.value = "";
+    input2.value = "";
+    input3.value = "";
 
 }
 
