@@ -1,15 +1,15 @@
 let food = [
-    {   name: 'pizza',
-        description: 'Mozerella Cheese, Fresh Pepperoni, Tomato Sauce, and any meat of choice',
+    {   name: 'Pizza',
+        description: 'Mozzarella Cheese, Fresh Pepperoni, Tomato Sauce, and any meat of choice',
         price: 12.00,
     },
 
-    {   name: 'filet mignon',
+    {   name: 'Filet Mignon',
         description: 'Grass-fed filet with burgundy sauce',
         price: 30.00,
     },
 
-    {  name: 'molten chocolate cake',
+    {  name: 'Molten Chocolate Cake',
         description: 'Decadent chocolate dessert with warm, gooey chocolate sauce',
         price: 9.50,
     },
@@ -86,9 +86,10 @@ function showMenuView(){
 function filterList(){
     let input = document.querySelector('#search').value;
     let newList = food.filter(findNewResults);
+    
 
     function findNewResults(item){
-        if (item.name.includes(input)){
+        if (item.name.toLowerCase().includes(input.toLowerCase())){
             return true;
         }else{
             return false;
