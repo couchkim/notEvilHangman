@@ -16,7 +16,7 @@ let food = [
     },
 ];
 
-
+let showItemView = require('./showItemView');
 
 window.addEventListener('load', function (){
     food.map(showFood);
@@ -73,22 +73,6 @@ function hideAdd(){
 
 }
 
-function showItemView(){
-    let removeMenu = document.querySelector('#menuItems');
-    removeMenu.classList.add("hidden");
-
-    let addBackItem = document.querySelector('#addItem');
-    addBackItem.classList.remove("hidden")
-
-    let input1 = document.querySelector("#newName");
-    let input2 = document.querySelector("#newDescrip");
-    let input3 = document.querySelector("#newPrice");
-    input1.value = "";
-    input2.value = "";
-    input3.value = "";
-
-}
-
 function showMenuView(){
     let view = document.querySelector('#menu')
     view.innerHTML = "";
@@ -119,4 +103,22 @@ function filterList(){
 
 
     
+},{"./showItemView":2}],2:[function(require,module,exports){
+function showItemView(){
+    let removeMenu = document.querySelector('#menuItems');
+    removeMenu.classList.add("hidden");
+
+    let addBackItem = document.querySelector('#addItem');
+    addBackItem.classList.remove("hidden")
+
+    let input1 = document.querySelector("#newName");
+    let input2 = document.querySelector("#newDescrip");
+    let input3 = document.querySelector("#newPrice");
+    input1.value = "";
+    input2.value = "";
+    input3.value = "";
+
+}
+
+module.exports = showItemView;
 },{}]},{},[1]);
