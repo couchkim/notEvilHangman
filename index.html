@@ -5,6 +5,10 @@
 <head>
     <title>Kim's Restaurant</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
     <script src='app.js'></script>
 
@@ -21,38 +25,62 @@
     <header>
 
         <h1>Kim's Restaurant</h1>
-        <div id="nav">
-            <button id = "show">Show Foods</button>
-            <button id = "add">Add Food Item</button>
+        <!--<div id="nav">
+            <button id="show">Show Foods</button>
+            <button id="add">Add Food Item</button>
+        </div>-->
+        <div id="tabs">
+            <ul>
+                <li><a href="#tabs-menu">Show Menu</a></li>
+                <li><a href="#tabs-add">Add Food</a></li>
+                <li><a href="#tabs-veg">Display Vegetarian</a></li>
+            </ul>
+            <div id="tabs-menu">
+                <input type="text" id="search" placeholder="Search Menu">
+                <ul id='menu'></ul>
+            </div>
+            <div id="tabs-add">
+                <div id="inputs">
+                    <h3>Add a menu item below</h3>
+                    <input type="text" class="add" id="newName" placeholder="Food Name">
+                    <input type="text" class="add" id="newDescrip" placeholder="Food Description">
+                    <input type="text" class="add" id="newPrice" placeholder="Food Price">
+                </div>
+                <button id="submit">Add to Menu</button>
+            </div>
+            <div id="tabs-veg">
+                <p>Gotta Put Something Here</p>
+            </div>
         </div>
+
 
     </header>
 
     <main>
-        <section id="menuItems">
+        <!--<section id="menuItems">-->
 
-            <input type="text" id="search"  placeholder="Search Menu">
+        <!--<input type="text" id="search" placeholder="Search Menu">-->
 
-            <!--<datalist id="foodlist">
+        <!--<datalist id="foodlist">
 
             </datalist>-->
 
 
-            <ul id="menu"></ul>
+        <!--<ul id="menu"></ul>-->
 
-        </section>
+        <!--</section>-->
 
-        <section id="addItem">
+        <!--<section id="addItem">
 
             <div id="inputs">
                 <h3>Add a menu item below</h3>
-                <input type="text" class="add" id = "newName" placeholder="Food Name">
-                <input type="text" class="add" id = "newDescrip" placeholder="Food Description">
-                <input type="text" class="add" id = "newPrice" placeholder="Food Price">
+                <input type="text" class="add" id="newName" placeholder="Food Name">
+                <input type="text" class="add" id="newDescrip" placeholder="Food Description">
+                <input type="text" class="add" id="newPrice" placeholder="Food Price">
             </div>
             <button id="submit">Add to Menu</button>
 
-        </section>
+        </section>-->
 
 
 

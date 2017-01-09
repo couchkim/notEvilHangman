@@ -19,7 +19,10 @@ let showItemView = require('./showItemView');
 
 window.addEventListener('load', function (){
     food.map(showFood);
-    hideAdd();
+    $( function() {
+    $( "#tabs" ).tabs();
+  } );
+    // hideAdd();
 
     let searchField = document.querySelector('#search');
     searchField.addEventListener('keyup', filterList);
@@ -27,11 +30,11 @@ window.addEventListener('load', function (){
     let addButton = document.querySelector('#submit');
     addButton.addEventListener('click', addFood);
 
-    let menuButton = document.querySelector('#show');
-    menuButton.addEventListener('click', showMenuView);
+    // let menuButton = document.querySelector('#show');
+    // menuButton.addEventListener('click', showMenuView);
 
-    let itemButton = document.querySelector('#add');
-    itemButton.addEventListener('click', showItemView);
+    // let itemButton = document.querySelector('#add');
+    // itemButton.addEventListener('click', showItemView);
 
 });
 
@@ -63,25 +66,25 @@ function addFood(){
     food.push(newItem);
     console.log(newItem);
     console.log(food);
-    showMenuView();
+    // showMenuView();
 }
 
-function hideAdd(){
-    let addSection = document.querySelector('#addItem');
-    addSection.classList.add("hidden");
+// function hideAdd(){
+//     let addSection = document.querySelector('#addItem');
+//     addSection.classList.add("hidden");
 
-}
+// }
 
-function showMenuView(){
-    let view = document.querySelector('#menu')
-    view.innerHTML = "";
+// function showMenuView(){
+//     let view = document.querySelector('#menu')
+//     view.innerHTML = "";
     
-    food.map(showFood);
-    let addBackMenu = document.querySelector('#menuItems');
-    addBackMenu.classList.remove("hidden");
-    hideAdd();
+//     food.map(showFood);
+//     let addBackMenu = document.querySelector('#menuItems');
+//     addBackMenu.classList.remove("hidden");
+//     hideAdd();
 
-}
+// }
 
 function filterList(){
     let input = document.querySelector('#search').value;
