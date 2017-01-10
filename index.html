@@ -16,6 +16,7 @@
        
         <h2>{{ foodName }}</h2>
         <p class="descrip">{{ foodDescrip }}</p>
+        <p class="diet">{{ foodDiet }}</p>
         <p class="price">Price ${{ foodPrice }}</p>
     </script>
 
@@ -45,6 +46,8 @@
                     <input type="text" class="add" id="newName" placeholder="Food Name">
                     <input type="text" class="add" id="newDescrip" placeholder="Food Description">
                     <input type="text" class="add" id="newPrice" placeholder="Food Price">
+                    <label for="autocomplete">Select a dietary option: </label>
+                    <input id="autocomplete">
                 </div>
                 <button id="submit">Add to Menu</button>
             </div>

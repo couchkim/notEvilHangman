@@ -1,16 +1,19 @@
 let food = [
     {   name: 'Pizza',
         description: 'Mozzarella Cheese, Fresh Pepperoni, Tomato Sauce, and any meat of choice',
+        dietInfo: 'low-cal',
         price: 12.00,
     },
 
     {   name: 'Filet Mignon',
         description: 'Grass-fed filet with burgundy sauce',
+        dietInfo: 'gluten free',
         price: 30.00,
     },
 
     {  name: 'Molten Chocolate Cake',
         description: 'Decadent chocolate dessert with warm, gooey chocolate sauce',
+        dietInfo: 'vegetarian',
         price: 9.50,
     },
 ];
@@ -23,6 +26,11 @@ window.addEventListener('load', function (){
     $( "#tabs" ).tabs();
   } );
     // hideAdd();
+
+    $( "#autocomplete" ).autocomplete({
+  source: [ "low-cal", "vegetarian", "gluten free"]
+});
+
 
     let searchField = document.querySelector('#search');
     searchField.addEventListener('keyup', filterList);
@@ -49,6 +57,7 @@ function showFood(list){
     child.innerHTML = Mustache.render(template.innerHTML, {
         foodName: list.name,
         foodDescrip: list.description,
+        foodDiet: list.dietInfo,
         foodPrice: parseInt(list.price).toFixed(2),
     });
 
@@ -57,9 +66,11 @@ function showFood(list){
 };
 
 function addFood(){
+    
     let newItem= {
         name: document.querySelector('#newName').value,
         description: document.querySelector('#newDescrip').value,
+        dietInfo: document.querySelector('#autocomplete').source,
         price: document.querySelector('#newPrice').value,
     }
     
@@ -67,6 +78,9 @@ function addFood(){
     console.log(newItem);
     console.log(food);
     // showMenuView();
+    let view = document.querySelector('#menu')
+    view.innerHTML = "";
+    food.map(showFood);
 }
 
 // function hideAdd(){
