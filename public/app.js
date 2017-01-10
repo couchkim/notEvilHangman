@@ -32,6 +32,7 @@ window.addEventListener('load', function (){
   source: [ "low-cal", "vegetarian", "gluten free"]
 });
 
+findVeg();
 
     let searchField = document.querySelector('#search');
     searchField.addEventListener('keyup', filterList);
@@ -71,10 +72,10 @@ function addFood(){
     let newItem= {
         name: document.querySelector('#newName').value,
         description: document.querySelector('#newDescrip').value,
-        dietInfo: document.querySelector('#autocomplete').source,
+        dietInfo: document.querySelector('#autocomplete').value,
         price: document.querySelector('#newPrice').value,
     }
-    
+
     food.push(newItem);
     console.log(newItem);
     console.log(food);
@@ -119,8 +120,35 @@ function filterList(){
 
 }
 
+function findVeg(){
+    let keepers = food.filter(vegFilter);
 
+    function vegFilter(item){
+    if (item.dietInfo === 'vegetarian'){
+        return true
+    }else{
+        return false
+    }
+    }
+    keepers.map(showVeg);
+}
     
+    function showVeg(list){
+        let child = document.createElement('li');
+    let parent = document.querySelector('#vegOptions');
+    
+    let template = document.querySelector('#food-template');
+
+
+    child.innerHTML = Mustache.render(template.innerHTML, {
+        foodName: list.name,
+        foodDescrip: list.description,
+        foodDiet: list.dietInfo,
+        foodPrice: parseInt(list.price).toFixed(2),
+    });
+
+    parent.appendChild(child);
+    }
 },{"./showItemView":2}],2:[function(require,module,exports){
 function showItemView(){
     let removeMenu = document.querySelector('#menuItems');
